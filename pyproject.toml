@@ -1,12 +1,26 @@
 [project]
 name = "dhan"
 version = "0.1.0"
-description = "Add your description here"
+description = "Algorithmic trading and backtesting system with Dhan API integration"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "pydantic>=2.12.5",
     "python-dotenv>=1.2.1",
+    "numpy>=1.24",
+    "websockets>=11.0",
+]
+
+[project.optional-dependencies]
+charts = [
+    "plotly>=5.0",
+]
+indicators = [
+    "TA-Lib",
+]
+all = [
+    "plotly>=5.0",
+    "TA-Lib",
 ]
 
 [dependency-groups]

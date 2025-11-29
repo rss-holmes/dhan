@@ -128,3 +128,19 @@ class DhanClient:
         if self._funds is None:
             self._funds = FundsService(self)
         return self._funds
+
+    def switch_context(self, context: DhanContext) -> None:
+        """Switch to a different context (environment/credentials).
+
+        This resets all service instances to use the new context.
+
+        Args:
+            context: The new context configuration.
+        """
+        self._context = context
+        # Reset all service instances so they use the new context
+        self._orders = None
+        self._market = None
+        self._historical = None
+        self._portfolio = None
+        self._funds = None

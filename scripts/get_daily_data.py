@@ -30,8 +30,7 @@ def main() -> None:
     client = DhanClient(ctx)
 
     print(f"Using environment: {ctx.environment.value}")
-    print(f"Base URL: {ctx.base_url}")
-    print()
+    print(f"Base URL: {ctx.base_url}")  
 
     request = DailyHistoricalRequest(
         securityId="1333",
